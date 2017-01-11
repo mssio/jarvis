@@ -1,3 +1,7 @@
+if (process.env.ENVIRONMENT && process.env.ENVIRONMENT === 'production') {
+  require('newrelic')
+}
+
 // modules =================================================
 var express = require('express')     // framework d'appli
 var app = express()
