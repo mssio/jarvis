@@ -1,5 +1,9 @@
 if (process.env.ENVIRONMENT && process.env.ENVIRONMENT === 'production') {
+  console.log('Environment is production, Newrelic is running')
   require('newrelic')
+} else {
+  console.log('Something when wrong, environment is:');
+  console.log(process.env.ENVIRONMENT);
 }
 
 // modules =================================================
