@@ -9,6 +9,10 @@ module.exports = function (app) {
     res.render('home')
   })
 
+  app.get('/terms-and-privacy-policy', function (req, res) {
+    res.render('terms-and-privacy-policy')
+  })
+
   app.get('/webhook/facebook', function (req, res) {
     // This enables subscription to the webhooks
     if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === process.env.VERIFY_TOKEN) {
