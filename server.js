@@ -38,17 +38,17 @@ This bot demonstrates many of the core features of Botkit:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-if (!process.env.page_token) {
+if (!process.env.PAGE_TOKEN) {
     console.log('Error: Specify page_token in environment');
     process.exit(1);
 }
 
-if (!process.env.verify_token) {
+if (!process.env.VERIFY_TOKEN) {
     console.log('Error: Specify verify_token in environment');
     process.exit(1);
 }
 
-if (!process.env.app_secret) {
+if (!process.env.APP_SECRET) {
     console.log('Error: Specify app_secret in environment');
     process.exit(1);
 }
@@ -74,20 +74,20 @@ if(ops.lt === false && ops.ltsubdomain !== null) {
 var controller = Botkit.facebookbot({
     debug: true,
     log: true,
-    access_token: process.env.page_token,
-    verify_token: process.env.verify_token,
-    app_secret: process.env.app_secret,
+    access_token: process.env.PAGE_TOKEN,
+    verify_token: process.env.VERIFY_TOKEN,
+    app_secret: process.env.APP_SECRET,
     validate_requests: true, // Refuse any requests that don't come from FB on your receive webhook, must provide FB_APP_SECRET in environment variables
 });
 
 var bot = controller.spawn({
 });
 
-controller.setupWebserver(process.env.port || 3000, function(err, webserver) {
+controller.setupWebserver(process.env.PORT || 3000, function(err, webserver) {
     controller.createWebhookEndpoints(webserver, bot, function() {
         console.log('ONLINE!');
         if(ops.lt) {
-            var tunnel = localtunnel(process.env.port || 3000, {subdomain: ops.ltsubdomain}, function(err, tunnel) {
+            var tunnel = localtunnel(process.env.PORT || 3000, {subdomain: ops.ltsubdomain}, function(err, tunnel) {
                 if (err) {
                     console.log(err);
                     process.exit();
