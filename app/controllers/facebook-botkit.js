@@ -67,7 +67,7 @@ var controller = Botkit.facebookbot({
 
 var bot = controller.spawn({});
 
-require('./facebook-conversations.js');
+require('./facebook-conversations')(controller);
 
 var handler = function (obj) {
   controller.debug('Message received from FB')
@@ -106,8 +106,8 @@ var handler = function (obj) {
             timestamp: facebook_message.timestamp
           }
 
-            // save if user comes from "Send to Messenger"
-          create_user_if_new(facebook_message.sender.id, facebook_message.timestamp)
+          // save if user comes from "Send to Messenger"
+          // create_user_if_new(facebook_message.sender.id, facebook_message.timestamp)
 
           controller.trigger('facebook_optin', [bot, message])
         }
