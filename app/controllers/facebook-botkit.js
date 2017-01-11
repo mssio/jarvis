@@ -54,7 +54,6 @@ if (!process.env.APP_SECRET) {
 }
 
 var Botkit = require('../lib/Botkit.js');
-var os = require('os');
 
 var controller = Botkit.facebookbot({
     debug: true,
