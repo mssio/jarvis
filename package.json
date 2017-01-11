@@ -1,0 +1,14 @@
+{
+  "name": "jarvis-aq250",
+  "version": "1.0.0",
+  "description": "Just a rather very intelligent system.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botkit": "^0.4.9"
+  }
+}
