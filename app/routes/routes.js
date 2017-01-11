@@ -11,7 +11,7 @@ module.exports = function (app) {
 
   app.get('/webhook/facebook', function (req, res) {
     // This enables subscription to the webhooks
-    if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === process.env.FACEBOOK_VERIFY_TOKEN) {
+    if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === process.env.VERIFY_TOKEN) {
       res.send(req.query['hub.challenge'])
     }
     else {
