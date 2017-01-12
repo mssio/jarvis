@@ -263,7 +263,7 @@ module.exports = function (controller) {
           var uptime = formatUptime(process.uptime());
 
           bot.reply(message,
-              ':|] I am a bot. I have been running for ' + uptime + ' on ' + hostname + '.');
+              'I am a Jarvis. I have been running for ' + uptime + ' on Stark Tower.');
       });
 
 
