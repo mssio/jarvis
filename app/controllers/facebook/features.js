@@ -4,7 +4,7 @@
 module.exports = function (controller) {
 
   controller.hears(['tell me about your features', 'what can you do'], 'message_received', function (bot, message) {
-    bot.reply(message, 'Sorry, no features have been implemented yet right now!')
+    bot.reply(message, 'Sorry, no features have been implemented right now!')
   })
 
   controller.hears(['tell me about your future', 'what is your plan'], 'message_received', function (bot, message) {
