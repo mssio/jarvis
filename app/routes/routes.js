@@ -1,6 +1,6 @@
 /* eslint-disable brace-style */
 /* eslint-disable camelcase */
-var facebook_handler = require('../controllers/facebook-botkit').handler
+var facebook_handler = require('../controllers/facebook/botkit').handler
 
 module.exports = function (app) {
   // public pages=============================================

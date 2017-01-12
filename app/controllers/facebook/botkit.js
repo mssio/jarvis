@@ -66,7 +66,8 @@ var controller = Botkit.facebookbot({
 
 var bot = controller.spawn({});
 
-require('./facebook-conversations')(controller);
+require('./demo')(controller);
+require('./features')(controller);
 
 var handler = function (obj) {
   controller.debug('Message received from FB')

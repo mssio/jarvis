@@ -2,8 +2,6 @@
 /* eslint-disable camelcase */
 
 module.exports = function (controller) {
-  var os = require('os');
-
   // controller.setupWebserver(process.env.PORT || 3000, function(err, webserver) {
   //     controller.createWebhookEndpoints(webserver, bot, function() {
   //         console.log('ONLINE!');
@@ -259,7 +257,6 @@ module.exports = function (controller) {
   controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your name'], 'message_received',
       function(bot, message) {
 
-          var hostname = os.hostname();
           var uptime = formatUptime(process.uptime());
 
           bot.reply(message,
